@@ -18,7 +18,6 @@ const MyChats = ({ fetchAgain }) => {
     const toast = useToast();
 
     const fetchChats = async () => {
-        // console.log(user._id);
         try {
             const config = {
                 headers: {
@@ -27,7 +26,6 @@ const MyChats = ({ fetchAgain }) => {
             };
 
             const { data } = await axios.get(`${ip()}api/chat`, config);
-            console.log(data);
             setChats(data);
         } catch (error) {
             console.log(error);
@@ -45,7 +43,6 @@ const MyChats = ({ fetchAgain }) => {
     useEffect(() => {
         setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
         fetchChats();
-        // eslint-disable-next-line
     }, [fetchAgain]);
 
     return (
@@ -89,7 +86,7 @@ const MyChats = ({ fetchAgain }) => {
                 borderRadius="lg"
                 overflowY="hidden"
             >
-                {chats? (
+                {chats && chats.length ? (
                     <Stack overflowY="scroll">
                         {chats.map((chat) => (
                             <Box

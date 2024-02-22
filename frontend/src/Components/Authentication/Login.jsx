@@ -8,7 +8,7 @@ import FacebookLogin from 'react-facebook-login';
 import axios from "axios";
 import validator from "validator";
 import { jwtDecode } from "jwt-decode";
-import { useToast, Link, useDisclosure, Text, Box, Center } from "@chakra-ui/react";
+import { useToast, Link, useDisclosure, Text, Box } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { ChatState } from "../../Context/ChatProvider";
 import {
@@ -488,8 +488,8 @@ const Login = () => {
                 Login
             </Button>
 
-            <div style={{ height: "0.2rem", width: "28rem", backgroundColor: "#6e7380", margin: "2rem 1rem 1rem"}}></div>
-            <div style={{ marginTop: "-2.5rem", marginBottom: "1rem", backgroundColor: "#ffffff", padding: "0px 1.5rem"}}>Sign in with</div>
+            <Box style={{ height: "0.2rem", backgroundColor: "#6e7380", margin: "2rem 1rem 1rem"}} w={{base: "18rem", md: "28rem"}}></Box>
+            <Box style={{ marginTop: "-2.5rem", marginBottom: "1rem", backgroundColor: "#ffffff"}} px={{base: "1rem", md:"1.5rem"}} >Sign in with</Box>
 
             <GoogleOAuthProvider clientId="1020982919233-p0fl23b5vc8qj67q9eee21nikdb072n3.apps.googleusercontent.com">
                 <GoogleLogin

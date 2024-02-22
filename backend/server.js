@@ -1,5 +1,4 @@
-const dotenv = require('dotenv');
-dotenv.config();
+const dotenv = require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -12,6 +11,7 @@ const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const { initializingGoogleStrategy } = require("./config/googlePassport.js");
 const { decrypt } = require("./config/encryption.js")
+const path = require("path");
 
 const PORT = 5000;
 app.use(cors());
@@ -52,6 +52,25 @@ app.get('/auth/google/callback',
         // Successful authentication, redirect home.
         res.redirect('http://localhost:5173/chats');
     });
+
+// --------------------------deployment------------------------------
+
+const __dirname1 = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname1, "/frontend/dist")));
+
+    app.get("*", (req, res) =>
+        res.sendFile(path.resolve(__dirname1, "frontend", "dist", "index.html"))
+    );
+} else {
+    app.get("/", (req, res) => {
+        res.send("API is running..");
+    });
+}
+
+// --------------------------deployment------------------------------
+
 
 // Error Handling middlewares
 app.use(notFound);

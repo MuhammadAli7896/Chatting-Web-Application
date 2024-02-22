@@ -86,7 +86,6 @@ function SideDrawer() {
             setLoading(false);
             setSearched(true);
             setSearchResult(data);
-            console.log(data);
         } catch (error) {
             toast({
                 title: "Error Occured!",
@@ -100,8 +99,6 @@ function SideDrawer() {
     };
 
     const accessChat = async (userId) => {
-        console.log(userId);
-
         try {
             setLoadingChat(true);
             const config = {
@@ -143,7 +140,6 @@ function SideDrawer() {
             setLoading(false);
             setSearched(true);
             setSearchResult(data);
-            console.log(data);
         } catch (error) {
             toast({
                 title: "Error Occured!",

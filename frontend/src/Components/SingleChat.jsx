@@ -22,11 +22,11 @@ import ip from "../ip";
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [loading2, setLoading2] = useState(false);
     const [newMessage, setNewMessage] = useState("");
     const [socketConnected, setSocketConnected] = useState(false);
     const [typing, setTyping] = useState(false);
     const [istyping, setIsTyping] = useState(false);
-    const [pic, setPic] = useState();
     const toast = useToast();
 
     const defaultOptions = {
@@ -81,7 +81,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                         Authorization: `Bearer ${user.token}`,
                     },
                 };
-                setNewMessage("");
                 const { data } = await axios.post(
                     `${ip()}api/message`,
                     {
@@ -90,6 +89,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     },
                     config
                 );
+                setNewMessage("");
                 setFetchAgain(!fetchAgain);
                 socket.emit("new message", data);
                 setMessages([...messages, data]);
@@ -100,7 +100,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     status: "error",
                     duration: 5000,
                     isClosable: true,
-                    position: "bottom",
+                    position: "top",
                 });
             }
         }
@@ -116,7 +116,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                         Authorization: `Bearer ${user.token}`,
                     },
                 };
-                setNewMessage("");
                 const { data } = await axios.post(
                     `${ip()}api/message`,
                     {
@@ -125,17 +124,19 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     },
                     config
                 );
+                setNewMessage("");
                 setFetchAgain(!fetchAgain);
                 socket.emit("new message", data);
                 setMessages([...messages, data]);
             } catch (error) {
+                console.log(error)
                 toast({
                     title: "Error Occured!",
                     description: "Failed to send the Message",
                     status: "error",
                     duration: 5000,
                     isClosable: true,
-                    position: "bottom",
+                    position: "top",
                 });
             }
         }
@@ -210,21 +211,26 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             return;
         }
         if (pics.type === "image/jpeg" || pics.type === "image/png") {
-            const data = new FormData();
-            data.append("file", pics);
-            data.append("upload_preset", "chatapp");
-            data.append("cloud_name", "dvqoptvzk");
-            fetch("https://api.cloudinary.com/v1_1/dvqoptvzk/image/upload", {
-                method: "post",
-                body: data,
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    setPic(data.url.toString());
-                })
-                .catch((err) => {
-                    console.log(err);
+            setLoading2(true);
+            try {
+                const data = new FormData();
+                data.append("file", pics);
+                data.append("upload_preset", "chatapp");
+                data.append("cloud_name", "dvqoptvzk");
+                const res = await fetch("https://api.cloudinary.com/v1_1/dvqoptvzk/image/upload", { method: "post", body: data, })
+                const response = await res.json();
+                await sendPic(response.url.toString());
+            } catch (error) {
+                toast({
+                    title: "Error Occured!",
+                    description: "Failed to send the image, Please try again.",
+                    status: "error",
+                    duration: 5000,
+                    isClosable: true,
+                    position: "bottom",
                 });
+                setLoading2(false);
+            }
         } else {
             toast({
                 title: "Please Select an Image!",
@@ -233,9 +239,12 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 isClosable: true,
                 position: "bottom",
             });
+            setLoading2(false);
             return;
         }
+    };
 
+    const sendPic = async (pic) => {
         try {
             const config = {
                 headers: {
@@ -243,7 +252,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     Authorization: `Bearer ${user.token}`,
                 },
             };
-            console.log(pic);
             const { data } = await axios.post(
                 `${ip()}api/message`,
                 {
@@ -253,20 +261,22 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 },
                 config
             );
+            setMessages([...messages, data]);
             setFetchAgain(!fetchAgain);
             socket.emit("new message", data);
-            setMessages([...messages, data]);
+            setLoading2(false);
         } catch (error) {
             toast({
                 title: "Error Occured!",
-                description: "Failed to send the image",
+                description: "Failed to send the image, Please try again.",
                 status: "error",
                 duration: 5000,
                 isClosable: true,
                 position: "bottom",
             });
+            setLoading2(false);
         }
-    };
+    }
 
     return (
         <>
@@ -351,8 +361,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                                 <></>
                             )}
                             <Box display="flex">
-                                <Box mx={1} boxSize="40px" alignItems="center" display="flex">
-                                    <Tooltip label="Send Image" hasArrow placement="bottom-end">
+                                <Box mx={1} boxSize={{base: "60px", md: "40px"}} alignItems="center" h={{base: 10, md: 10}} display="flex">
+                                    {loading2 ? <Spinner /> : <Tooltip label="Send Image" hasArrow placement="bottom-end">
                                         <label htmlFor="file-upload">
                                             <Image src={addImg} cursor="pointer" />
                                             <Input
@@ -364,7 +374,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                                                 onChange={(e) => postDetails(e.target.files[0])}
                                             />
                                         </label>
-                                    </Tooltip>
+                                    </Tooltip>}
                                 </Box>
                                 <Input
                                     variant="filled"
@@ -376,7 +386,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                                 <Tooltip label="Send" hasArrow placement="bottom-end">
                                     <IconButton
                                         size="md"
-                                        marginLeft="2px" // or adjust margin as needed
+                                        marginLeft="2.8px" // or adjust margin as needed
                                         icon={<ChatIcon />}
                                         aria-label="Send message"
                                         onClick={sendMessage2}

@@ -6,6 +6,7 @@
   background-image: url("./images/background.jpg");
   background-position: center;
   background-size: cover;
+  overflow-y: hidden;
 }
 
 ::-webkit-scrollbar {

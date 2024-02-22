@@ -1,6 +1,7 @@
 import { Avatar } from "@chakra-ui/avatar";
 import { Tooltip } from "@chakra-ui/tooltip";
 import ScrollableFeed from "react-scrollable-feed";
+import { Image, Box } from "@chakra-ui/react";
 import {
     isLastMessage,
     isSameSender,
@@ -36,12 +37,25 @@ const ScrollableChat = ({ messages }) => {
                                     }`,
                                 marginLeft: isSameSenderMargin(messages, m, i, user._id),
                                 marginTop: isSameUser(messages, m, i, user._id) ? 3 : 10,
+                                marginBottom: `${m.isPicture ? "10px": "0px"}`,
                                 borderRadius: "20px",
                                 padding: "5px 15px",
                                 maxWidth: "75%",
                             }}
                         >
-                            {m.content}
+                            <Box
+                                borderRadius="xl"
+                                overflow="hidden"
+                            >
+                                {m.isPicture ? (
+                                    <Image
+                                        src={m.content}
+                                        boxSize={{ base: "220px", md: "325px" }}
+                                    />
+                                ) : (
+                                    m.content
+                                )}
+                            </Box>
                         </span>
                     </div>
                 ))}

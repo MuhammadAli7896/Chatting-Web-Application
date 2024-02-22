@@ -33,7 +33,7 @@ const sendMessage = asyncHandler(async (req, res) => {
 
     if (!content || !chatId) {
         console.log("Invalid data passed into request");
-        return res.sendStatus(400);
+        return res.status(400).send("Invalid data passed into request");
     }
 
     let newMessage = {
