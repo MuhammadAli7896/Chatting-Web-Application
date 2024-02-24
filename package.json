@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "build": "npm install && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend"
+    "build": "npm install && npm install --legacy-peer-deps --prefix frontend && npm install vite --force --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
   "author": "Muhammad Ali",
