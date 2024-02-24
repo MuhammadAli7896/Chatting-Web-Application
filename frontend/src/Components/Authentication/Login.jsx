@@ -301,7 +301,7 @@ const Login = () => {
         if (!response || !response.email || !response.picture || !response.name) {
             toast({
                 title: "Error Occured!",
-                description: "Failed to Login with Google",
+                description: "Failed to Login with Facebook",
                 status: "error",
                 duration: 5000,
                 isClosable: true,
