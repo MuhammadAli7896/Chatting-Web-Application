@@ -63,7 +63,7 @@ And, then navigate back to root directory:
 
 This application contains some environmental variables which are kept in private so you have to create and mention them separately in a .env file.
 
-For example, for database connection the URL of the database is kept private because it contains all of the data of application and password for the database. You can setup your own database by visiting **mongodb.com**.
+For example, for database connection the URL of the database is kept private because it contains all of the data of application and password for the database. You can setup your own database by visiting **https://mongodb.com**.
 
 ### 5. Start the Application
 
