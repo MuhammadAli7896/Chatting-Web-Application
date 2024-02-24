@@ -67,8 +67,8 @@ Start the Chat Nest application by running:
 
 The application server will start, and you can access Chat Nest in your web browser by visiting **http://localhost:5000**.
 
-#### That's it you are now ready to use and develop this chatting application
+#### That's it you are now ready to use and develop this chatting application.
 <br/>
 
-#### Make sure you have installed and configured node.js on your device
+#### Make sure you have installed and configured node.js on your device.
 #### To install it, go to **https://nodejs.org/en/download**
