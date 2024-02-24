@@ -95,6 +95,7 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
             })
             res.status(200).json({message: "Password change request successful. Code send to the user email."})
         } catch (error) {
+            console.log(error);
             user.passwordResetToken = undefined;
             user.passwordResetTokenExpiresIn = undefined;
             user.save();    

@@ -11,14 +11,14 @@ const sendMail = async (options) => {
     });
 
 
-    const emailOtions = {
-        from: "Chat Nest Support<support@chatnest.com>",
+    const emailOptions = {
+        from: process.env.EMAIL_ADDRESS,
         to: options.email,
         subject: options.subject,
         text: options.message
     }
 
-    await transporter.sendMail(emailOtions);
+    await transporter.sendMail(emailOptions);
 }
 
 module.exports = sendMail;

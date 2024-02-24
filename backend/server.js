@@ -75,6 +75,8 @@ if (process.env.NODE_ENV === "production") {
 // Error Handling middlewares
 app.use(notFound);
 app.use(errorHandler);
+
+// socket.io setup
 const server = app.listen(PORT, console.log("listening to server at port", PORT));
 
 let io = require("socket.io")(server, {
