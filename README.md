@@ -9,10 +9,12 @@ Chat Nest is a modern chatting application built using the MERN stack (MongoDB, 
 ## Features
 
 - **Real-Time Communication**: Engage in lively conversations with friends and colleagues in real-time, thanks to Socket.IO's efficient event-driven architecture.
-  
-- **Secure & Private**: Your privacy is our priority. With end-to-end encryption and authentication mechanisms from Google and Facebook, Chat Nest ensures secure interactions.
+
+- **Create Groups**: Users can create groups to bring together friends, family, or colleagues, facilitating organized and efficient communication within specific contexts.
   
 - **Effortless Media Sharing**: Share images seamlessly with Cloudinary's advanced image management system, enhancing your conversations with visual content.
+
+- **Secure & Private**: Your privacy is our priority. With end-to-end encryption and authentication mechanisms from Google and Facebook, Chat Nest ensures secure interactions.
   
 - **Lightning-Fast Frontend**: Powered by Vite.js, Chat Nest offers a lightning-fast and intuitive user interface, ensuring a smooth chatting experience.
   
@@ -22,7 +24,7 @@ Chat Nest is a modern chatting application built using the MERN stack (MongoDB, 
 
 ## How to use?
 
-Simply, go to https://chat-nest-zcoa.onrender.com/ and sign up or you can login with your facebook and google accounts.
+Simply, go to https://chat-nest-zcoa.onrender.com/ and sign up or you can login with your facebook and google accounts. Search for any user or your friend in search tab at top left corner, there you can find your friends and users. So you can create a chat by simply clicking on them.
 Then you are ready to go. Enjoy chatting with your friends and family.
 
 ## Get Started
