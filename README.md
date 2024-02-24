@@ -33,6 +33,8 @@ Clone the Chat Nest repository to your local machine using the following command
 
 #### https://github.com/MuhammadAli7896/Chatting-Web-Application.git
 
+Make sure you have git installed on your device
+
 ### 2. Install Dependencies
 
 Navigate to the root directory of the project and install the necessary dependencies by running:
