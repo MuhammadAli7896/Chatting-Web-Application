@@ -65,7 +65,23 @@ Start the Chat Nest application by running:
 
 #### npm start
 
-The application server will start, and you can access Chat Nest in your web browser by visiting **http://localhost:5000**.
+This will start backend server at **http://localhost:5000**.
+
+Now, go to frontend directory:
+
+#### cd frontend
+
+Now start the development server of frontend:
+
+#### npm run dev
+
+This will start your development server and you can view it at **http://localhost:5173** .
+
+Since I have used vite.js for this application frontend, so I run this command. If you are are using npx create-react-app command to create app, you have to run:
+
+#### npm start
+
+This will start your development server and you can view it at **http://localhost:3000**.
 
 #### That's it you are now ready to use and develop this chatting application.
 <br/>
