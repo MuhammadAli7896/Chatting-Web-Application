@@ -18,6 +18,8 @@ Chat Nest is a modern chatting application built using the MERN stack (MongoDB, 
   
 - **Reliable Scalability**: Hosted on Render, Chat Nest guarantees reliability and scalability, providing uninterrupted connectivity regardless of the scale of interaction.
 
+- - **Forgot Password**: If a user forgets their password, they can easily reset it using the "Forgot Password" functionality, ensuring continued access to their account.
+
 ## How to use?
 
 Simply, go to https://chat-nest-zcoa.onrender.com/ and sign up or you can login with your facebook and google accounts.
