@@ -35,7 +35,7 @@ To get Chat Nest up and running on your local machine, follow these simple steps
 
 Clone the Chat Nest repository to your local machine using the following command:
 
-#### https://github.com/MuhammadAli7896/Chatting-Web-Application.git
+#### git clone https://github.com/MuhammadAli7896/Chatting-Web-Application.git
 
 Make sure you have git installed on your device.
 
