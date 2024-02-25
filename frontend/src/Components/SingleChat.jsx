@@ -15,7 +15,8 @@ import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
 import addImg from "../images/addImg.png"
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://chat-nest-zcoa.onrender.com/";
+// const ENDPOINT = "http://localhost:5000";
 var socket, selectedChatCompare;
 import ip from "../ip";
 

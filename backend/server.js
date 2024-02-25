@@ -85,7 +85,7 @@ const server = app.listen(PORT, console.log("listening to server at port", PORT)
 let io = require("socket.io")(server, {
     pingTimeout: 60000,
     cors: {
-        origin: "http://localhost:5173",
+        origin: "https://chat-nest-zcoa.onrender.com/",
         // credentials: true,
     },
 });
