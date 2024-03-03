@@ -14,6 +14,8 @@ Chat Nest is a modern chatting application built using the MERN stack (MongoDB, 
   
 - **Effortless Media Sharing**: Share images seamlessly with Cloudinary's advanced image management system, enhancing your conversations with visual content.
 
+- **Enhanced UI with Chakra UI**: Utilizing Chakra UI, Chat Nest offers a sleek and modern user interface, elevating the visual appeal and usability of the application.
+
 - **Secure & Private**: Your privacy is our priority. With end-to-end encryption and authentication mechanisms from Google and Facebook, Chat Nest ensures secure interactions.
   
 - **Lightning-Fast Frontend**: Powered by Vite.js, Chat Nest offers a lightning-fast and intuitive user interface, ensuring a smooth chatting experience.
