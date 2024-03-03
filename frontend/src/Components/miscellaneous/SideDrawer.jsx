@@ -31,8 +31,9 @@ import { Effect } from "react-notification-badge";
 import { getSender } from "../../config/ChatLogics";
 import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
-import { Image } from "@chakra-ui/react";
+import { Image, Link } from "@chakra-ui/react";
 import logo from "../../images/logo.png";
+import github from "../../images/github.png"
 import ip from "../../ip";
 
 function SideDrawer() {
@@ -163,14 +164,25 @@ function SideDrawer() {
                 p="5px 10px 5px 10px"
                 borderWidth="5px"
             >
-                <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
-                    <Button bg="white" variant="ghost" onClick={onOpen}>
-                        <i className="fas fa-search"></i>
-                        <Text display={{ base: "none", md: "flex" }} px={4}>
-                            Search User
-                        </Text>
-                    </Button>
-                </Tooltip>
+                <Box display="flex" gap={4}>
+                    <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
+                        <Button bg="white" variant="ghost" onClick={onOpen}>
+                            <i className="fas fa-search"></i>
+                            <Text display={{ base: "none", md: "flex" }} px={4}>
+                                Search User
+                            </Text>
+                        </Button>
+                    </Tooltip>
+                    <Box display={{base: "none", md: "flex"}} alignItems="center">
+                        <Tooltip label="Check out Source code" hasArrow placement="bottom">
+                            <Link href="https://github.com/MuhammadAli7896/Chatting-Web-Application" target="_blank">
+                                <Image src={github} alt="" height="30px" />
+                            </Link>
+                        </Tooltip>
+                    </Box>
+                   
+                </Box>
+                
                 <Box display="flex" alignItems="center"  >
                     <Image src={logo} boxSize="30px" mx={3} />
                     <Text fontSize={{ base: "xl", md: "2xl" }} fontFamily="Work sans">
