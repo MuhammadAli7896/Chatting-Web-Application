@@ -40,68 +40,116 @@ Then you are ready to go. Enjoy chatting with your friends and family.
 
 ## Get Started
 
+### Prerequisites
+
+- Node.js and npm installed on your machine. To install node.js visit **https://nodejs.org/en/download**
+- MongoDB database instance. To create mongodb instance visit **https://mongodb.com/atlas**
+
+### Setting up Project 
 To get Chat Nest up and running on your local machine, follow these simple steps:
 
 ### 1. Clone the Repository
 
 Clone the Chat Nest repository to your local machine using the following command:
 
-#### git clone https://github.com/MuhammadAli7896/Chatting-Web-Application.git
-
+  ```git
+  git clone https://github.com/MuhammadAli7896/Chatting-Web-Application.git
+```
 Make sure you have [git](https://git-scm.com/downloads) installed on your device.
 
 ### 2. Install Dependencies
 
 Navigate to the root directory of the project and install the necessary dependencies by running:
 
-#### npm install 
-
+```bash
+npm install 
+```
 ### 3. Install Frontend Dependencies
 
 Navigate to the `frontend` directory of the project:
 
-#### cd frontend
+```bash
+cd frontend
+```
 
 Then, install the frontend dependencies by running:
 
-#### npm install --force
+```bash
+npm install --force
+```
 
 And, then navigate back to root directory:
 
-#### cd..
+```bash
+cd..
+```
 
-### 4. Environment variables 
+### 4. Configure environment variables 
 
-This application contains some environmental variables which are kept in private so you have to create and mention them separately in a .env file.
-
-For example, for database connection the URL of the database is kept private because it contains all of the data of application and password for the database. You can setup your own database by visiting **https://mongodb.com**.
+Create a `.env` file in the root directory and add the following environment variables:
+```env
+MONGO_URI = 
+JWT_SECRET = 
+EMAIL_USER = 
+EMAIL_PASSWORD =  
+EMAIL_HOST = 
+EMAIL_ADDRESS = 
+EMAIL_PORT = 587
+MAX_LIMIT = 
+MIN_LIMIT = 
+clientID = 
+clientSecret = 
+IV = 
+KEY = 
+NODE_ENV = production
+```
 
 ### 5. Start the Application
 
 Start the Chat Nest application by running:
 
-#### npm start
+```bash
+npm start
+```
 
 This will start backend server at **http://localhost:5000**.
 
 Now, go to frontend directory:
 
-#### cd frontend
+```bash
+cd frontend
+```
 
 Now start the development server of frontend:
 
-#### npm run dev
+```bash
+npm run dev
+```
 
 This will start your development server and you can view it at **http://localhost:5173** .
 
 Since I have used vite.js for this application frontend, so I run this command. If you are are using npx create-react-app command to create app, you have to run:
 
-#### npm start
+```bash
+npm start
+```
 
 This will start your development server and you can view it at **http://localhost:3000**.
 
 #### That's it you are now ready to use and develop this chatting application.
-<br/>
 
-#### Make sure you have installed and configured node.js on your device.
-#### To install it, go to **https://nodejs.org/en/download**
+## Deployment
+
+The application can be deployed to the [Render](https://render.com) hosting platform following these steps:
+
+1. Create an account on [Render](https://dashboard.render.com/register) and set up your project.
+2. Connect your GitHub repository to your Render project.
+3. Configure environment variables in Render similar to the local setup.
+4. Render will automatically build and deploy your application whenever changes are pushed to the connected GitHub repository.
+5. For detailed deployment instructions, refer to the Render documentation.
+   
+### Contact
+
+#### LinkedIn: https://www.linkedin.com/in/muhammad-ali-a772a025b/
+#### Portfolio: https://muhammad-aliportfolio.netlify.app/
+<br />
