@@ -4,7 +4,8 @@ Welcome to Chat Nest - your go-to platform for seamless real-time communication 
 
 ## About
 
-Chat Nest is a modern chatting application built using the MERN stack (MongoDB, Express.js, React, Node.js) along with Socket.IO for real-time capabilities. It offers end-to-end encryption, robust authentication via Google and Facebook, and effortless media sharing through Cloudinary.
+<a href="https://chat-nest-zcoa.onrender.com/" target="_blank">Chat Nest</a>
+ is a modern chatting application built using the MERN stack (MongoDB, Express.js, React, Node.js) along with Socket.IO for real-time capabilities. It offers end-to-end encryption, robust authentication via Google and Facebook, and effortless media sharing through Cloudinary.
 
 ## Tech Stack
 
