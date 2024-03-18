@@ -9,13 +9,13 @@ Welcome to Chat Nest - your go-to platform for seamless real-time communication 
 
 ## Tech Stack
 
-- **Frontend**: React for UI development.
-- **Backend**: Node.js with Express.js for scalable server-side scripting.
-- **UI Enhancement**: Chakra UI for improved aesthetics and responsiveness.
-- **Database**: MongoDB with Mongoose.js for flexible and scalable data management.
-- **Real-time Communication**: Socket.io for seamless chatting and data transfer.
-- **Image Sharing**: Cloudinary for storage, optimization, and media sharing.
-- **Hosting**: Render for simplified deployment and scaling of the web application.
+- **Frontend**: **React** for UI development.
+- **Backend**: **Node.js** with Express.js for scalable server-side scripting.
+- **UI Enhancement**: **Chakra UI** for improved aesthetics and responsiveness.
+- **Database**: **MongoDB** with Mongoose.js for flexible and scalable data management.
+- **Real-time Communication**: **Socket.io** for seamless chatting and data transfer.
+- **Image Sharing**: **Cloudinary** for storage, optimization, and media sharing.
+- **Hosting**: **Rende**r for simplified deployment and scaling of the web application.
 
 ## Features
 
